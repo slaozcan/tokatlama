@@ -1,0 +1,64 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.photo-area {
+    position: relative; /* Emojiyi fotoğrafın üzerinde konumlandırmak için */
+    display: inline-block;
+    border: 5px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#target-photo {
+    width: 300px; /* Fotoğraf boyutunu ayarlayın */
+    height: auto;
+    display: block;
+}
+
+.slap-emoji {
+    position: absolute;
+    font-size: 80px;
+    top: -100px; /* Başlangıçta fotoğrafın üstünde gizli */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: top 0.15s ease-out, opacity 0.15s ease-out; /* Animasyon hızı */
+    pointer-events: none; /* Tokat emojisine tıklanmasını engeller */
+}
+
+/* JavaScript ile eklenecek sınıf */
+.slap-active {
+    top: 50px; /* Tokat atılınca inecek konum */
+    opacity: 1;
+}
+
+#slap-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.controls p {
+    font-size: 1.1em;
+    margin-top: 10px;
+}
